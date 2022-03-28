@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- homade.protein tree view -->
+    <record id="homade_protein_view_tree" model="ir.ui.view">
+        <field name="name">Jenis Protein</field>
+        <field name="model">homade.protein</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="deskripsi"/>
+                <field name="harga"/>
+            </tree>
+        </field>
+    </record>
+    <!-- homade.protein form view -->
+    <record id="homade_protein_view_form" model="ir.ui.view">
+        <field name="name">Protein</field>
+        <field name="model">homade.protein</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="deskripsi"/>
+                        <field name="harga"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- homade.protein action window -->
+    <record id="homade_protein_action" model="ir.actions.act_window">
+        <field name="name">Daftar Protein</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">homade.protein</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+    id="homade_protein_menu_act" 
+    name="Protein" 
+    parent="homade_daftarmakanan_menu_categ" 
+    action="homade_protein_action" 
+    sequence="20"/>
+</odoo>
